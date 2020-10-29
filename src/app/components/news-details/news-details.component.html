@@ -1,0 +1,80 @@
+<div class="newsdetails__page py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <breed-crumb></breed-crumb>
+                <h1 class="mb-3 newsdetails__page__title">News Details</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="article__container rounded">
+                    <div class="article__header">
+                        <img src="{{Article?.urlToImage}}" alt="">
+                    </div>
+                    <div class="article__content p-4">
+                        <small class="text-muted">Category Name</small>
+                        <div class="d-flex align-items-center justify-content-between mb-4">
+                            <h3 class="article__title">{{Article?.title}}</h3>
+                            <div>
+                                <img src="../../../assets/images/favourite.png" class="mr-3" width="15" alt="">
+                                <img src="../../../assets/images/share.png" alt="" width="15">
+                            </div>
+                        </div>
+                        <p [innerHTML]="Article?.content"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 mt-4">
+                <h1 class="newsdetails__page__title mb-3">Related Topics</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-2">
+                <div class="rounded related__card position-relative">
+                    <div class="related__card__overlay"></div>
+                    <img src="../../../assets/images/related1.jpg" alt="">
+                    <div class="related__card__content rounded">
+                        <small class="text-muted">Category</small>
+                        <h2>New Artificial Intelligence Apps</h2>
+                        <a class="d-flex" routerLink="">
+                            View Details
+                            <i class="las la-long-arrow-alt-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-2">
+                <div class="rounded related__card position-relative">
+                    <div class="related__card__overlay"></div>
+                    <img src="../../../assets/images/related2.jpg" alt="">
+                    <div class="related__card__content rounded">
+                        <small class="text-muted">Category</small>
+                        <h2>Technology Development Seminar</h2>
+                        <a class="d-flex" routerLink="">
+                            View Details
+                            <i class="las la-long-arrow-alt-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-2">
+                <div class="rounded related__card position-relative">
+                    <div class="related__card__overlay"></div>
+                    <img src="../../../assets/images/related3.jpg" alt="">
+                    <div class="related__card__content rounded">
+                        <small class="text-muted">Category</small>
+                        <h2>Next Step Of IOT
+                            [Internet Of Things]</h2>
+                        <a class="d-flex" routerLink="">
+                            View Details
+                            <i class="las la-long-arrow-alt-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

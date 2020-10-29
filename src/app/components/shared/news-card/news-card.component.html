@@ -1,0 +1,22 @@
+<div class="news__card bg-white rounded h-100 d-flex flex-column justify-content-between">
+    <div class="card__header">
+        <img [src]="article?.urlToImage ? article?.urlToImage : 'https://via.placeholder.com/200'" alt="">
+    </div>
+    <div class="card__icons  px-3 py-2 text-right">
+        <img src="../../../../assets/images/favourite.png" class="mr-2" width="20" alt="">
+        <img src="../../../../assets/images/share.png" alt="" width="20">
+    </div>
+    <div class="card__title px-3 py-2">
+        <h5>{{article?.title | slice:0:60}}{{article?.title?.length > 60 ? '...' : ''}}</h5>
+    </div>
+    <div class="card__tags  px-3 py-2">
+        <span class="tag">News</span>
+    </div>
+    <div class="card__content px-3 py-2">
+        <p class="m-0">{{article?.description | slice:0:200}}{{article?.description?.length > 200 ? '...' : ''}}</p>
+    </div>
+    <div class="card__footer px-3 py-3 d-flex align-items-center">
+        <img src="../../../../assets/images/daterange.png" alt="">
+        <p class="m-0 pl-2">{{article?.publishedAt | formateDate : 'iii L LLL y'}}</p>
+    </div>
+</div>

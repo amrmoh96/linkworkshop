@@ -1,0 +1,68 @@
+<header>
+    <nav class="navbar navbar-expand-md fixed-top">
+        <div class="container">
+            <div class="d-flex align-items-center justify-content-between w-100">
+                <div class="d-flex align-items-center">
+                    <div class="menu__icon" (click)="toggleSideMenu()">
+                        <img src="../../../../assets/images/Menu.png" alt="" *ngIf="!showSideMenu">
+                        <img src="../../../../assets/images/Menu_2_.png" *ngIf="showSideMenu" alt="">
+                    </div>
+                    <div class="nav__logo">
+                        <img src="../../../../assets/images/logo.png" width="65" class="ml-5" alt="">
+                    </div>
+                </div>
+                <div class="d-flex align-items-center">
+                    <div class="hover__icon p-2 rounded text-center" placement="bottom" ngbTooltip="search"
+                        tooltipClass="tooltip__header__class">
+                        <img src="../../../../assets/images/ic_search.png" width="25">
+                    </div>
+                    <div class="ml-4 notification__bell hover__icon p-2 rounded text-center" placement="bottom"
+                        ngbTooltip="notification" tooltipClass="tooltip__header__class">
+                        <img src="../../../../assets/images/bell.png" width="25" height="25">
+                    </div>
+                    <div class="user__profile d-flex align-items-center py-1 px-4">
+                        <img src="../../../../assets/images/img@2x.png" width="60" alt="">
+                        <span class="pl-1">User Name</span>
+                    </div>
+                    <div class="settings__menu text-center">
+                        <div ngbDropdown class="d-inline-block">
+                            <div class="hover__icon rounded p-2" placement="bottom" ngbTooltip="settings"
+                                tooltipClass="tooltip__header__class" id="dropdownBasic1" ngbDropdownToggle>
+                                <img src="../../../../assets/images/settings.png" width="25">
+                            </div>
+                            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                <p class="m-0 px-2">
+                                    <small class="text-muted">Languages</small>
+                                </p>
+                                <button ngbDropdownItem>
+                                    English
+                                    <span class="float-right"><i class="las la-check"></i></span>
+                                </button>
+                                <button ngbDropdownItem>
+                                    اللغه العربيه
+                                </button>
+                                <div class="dropdown-divider"></div>
+                                <p class="m-0 px-2">
+                                    <small class="text-muted">font-size</small>
+                                </p>
+                                <div class="d-flex font__size__options px-2">
+                                    <button ngbDropdownItem>A</button>
+                                    <button ngbDropdownItem>A</button>
+                                    <button ngbDropdownItem>A</button>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <p class="m-0 px-2">
+                                    <small class="text-muted">Acount</small>
+                                </p>
+                                <button ngbDropdownItem>
+                                    Sign Out
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<side-menu [show]="showSideMenu"></side-menu>

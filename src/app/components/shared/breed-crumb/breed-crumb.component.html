@@ -1,0 +1,14 @@
+<ul class="list-inline d-flex flex-wrap center text-left breed__crumb">
+    <li class="list-inline-item text-capitalize d-flex center text-left">
+        <a routerLink="/">Home</a>
+    </li>
+    <li class="list-inline-item text-capitalize text-center d-flex align-items-center">
+        <i class="las la-angle-right"></i>
+    </li>
+    <li *ngFor="let breed of BreedCrumbs;let isLast = last"
+        class="list-inline-item text-capitalize d-flex align-items-center text-left">
+        <a *ngIf="!isLast" routerLink="/{{breed.url}}" [queryParams]="breed.queryParams">{{breed?.label}}</a>
+        <i *ngIf="!isLast" class="las la-angle-right ml-2"></i>
+        <span *ngIf="isLast">{{breed?.label}}</span>
+    </li>
+</ul>

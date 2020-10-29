@@ -1,1 +1,117 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/scss/bootstrap";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap");
+
+$mainColor: #8dc043;
+html,
+* {
+  outline: none !important;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background: #efefef;
+  padding-top: 84px;
+}
+
+.carousel-indicators li {
+  width: 15px !important;
+  height: 15px !important;
+  border-radius: 50% !important;
+}
+
+.carousel-indicators li.active {
+  width: 17px !important;
+  height: 17px !important;
+}
+
+.btn-primary {
+  background: $mainColor !important;
+  border-color: $mainColor !important;
+  outline: none !important;
+  box-shadow: none !important;
+  .btn-primary:not(:disabled):not(.disabled):active,
+  .btn-primary:not(:disabled):not(.disabled).active,
+  .show > .btn-primary.dropdown-toggle,
+  .btn-primary:focus,
+  .btn-primary.focus,
+  .btn-primary.disabled,
+  .btn-primary:disabled {
+    background: $mainColor !important;
+    border-color: $mainColor !important;
+  }
+  &:hover {
+    border-color: rgba($mainColor, 0.8) !important;
+    background-color: rgba($mainColor, 0.8) !important;
+  }
+}
+
+// Home Page Styles
+.latest__news__section {
+  .latest__news__section__title {
+    h2 {
+      font-weight: 600;
+      color: #000;
+    }
+    a {
+      color: $mainColor;
+      font-weight: 600;
+      cursor: pointer;
+      &:hover {
+        color: $mainColor;
+      }
+    }
+  }
+}
+
+.how__we__helped {
+  background: url("./assets/images/bg.jpg");
+  background-size: 120%;
+  background-position: center;
+  background-repeat: no-repeat;
+  .section__overlay {
+    background: rgb(0, 0, 0);
+    background: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 0.30575980392156865) 0%,
+      rgba(0, 0, 0, 0.7287289915966386) 100%
+    );
+    .section__title {
+      h1 {
+        font-weight: 600;
+      }
+      p {
+        font-size: 21px;
+      }
+    }
+    .rect__containers {
+      width: 90%;
+      margin: 100px auto;
+      .rect {
+        border: 3px solid #ffffff;
+        background: transparent;
+        cursor: pointer;
+        width: 180px;
+        height: 180px;
+        transform: rotateZ(45deg);
+        transition: 0.2s all ease-in;
+        &:hover {
+          background: $mainColor;
+          border-color: $mainColor;
+        }
+        .rect__content {
+          transform: rotateZ(-45deg);
+          p {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+          }
+        }
+      }
+      .botton__row {
+        width: 83%;
+        margin: auto;
+      }
+    }
+  }
+}

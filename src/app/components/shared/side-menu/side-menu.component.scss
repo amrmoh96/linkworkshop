@@ -1,0 +1,48 @@
+.side__menu {
+  position: fixed;
+  width: 35%;
+  min-width: 400px;
+  background: #048896;
+  height: calc(100% - 84px);
+  z-index: 20;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s all ease-in;
+  .social__bar {
+    border-right: 1px solid rgb(255 255 255 / 0.04);
+  }
+  .navigation__area {
+    border-top: 1px solid rgb(255 255 255 / 0.04);
+    ul {
+      margin: 0;
+      li {
+        margin-bottom: 20px;
+        ul li {
+          margin-bottom: 5px;
+          a {
+            font-size: 15px;
+            font-weight: normal;
+            color: #e7e7e7;
+          }
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+      li a {
+        font-size: 30px;
+        text-decoration: none;
+        color: #ffffff;
+        font-weight: 600;
+      }
+      li.active a {
+        color: #8dc043;
+      }
+    }
+  }
+}
+
+.side__menu.show {
+  opacity: 1;
+  visibility: visible;
+}
