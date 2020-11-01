@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Article } from "src/app/models/articles";
 import { ReadjsonService } from "src/app/service/readjson.service";
 import { isAfter } from "date-fns";
+import { Category } from "src/app/models/category";
 
 @Component({
   selector: "app-news",
@@ -14,17 +15,15 @@ export class NewsComponent implements OnInit {
   public SelectedPage: number = 1;
   public PageinatorStart: number = 0;
   public PageinatorEnd: number = this.numerPerPage;
+  public Categories: Category[];
   constructor(private JsonService: ReadjsonService) {}
 
   ngOnInit() {
     this.JsonService.getData().subscribe((res) => {
-      this.Articles = res.articles.sort((a, b) => {
-        if (isAfter(new Date(b.publishedAt), new Date(a.publishedAt))) {
-          return 1;
-        } else {
-          return -1;
-        }
-      });
+      this.Categories = res.sourceCategory;
+      console.log(this.Categories);
+      this.Articles = res.articles;
+      this.Articles = this.sort({ type: "desc" });
     });
   }
 
@@ -44,5 +43,27 @@ export class NewsComponent implements OnInit {
       return _pagesArr;
     }
     return [];
+  }
+
+  sort($event): Article[] {
+    let _articles: Article[];
+    if ($event.type == "desc") {
+      _articles = this.Articles.sort((a, b) => {
+        if (a.title > b.title) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+    } else {
+      _articles = this.Articles.sort((a, b) => {
+        if (a.title > b.title) {
+          return -1;
+        } else {
+          return 1;
+        }
+      });
+    }
+    return _articles;
   }
 }

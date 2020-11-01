@@ -15,9 +15,11 @@ export class BreedCrumbComponent implements OnInit {
     this.BuildBreedCrumb();
   }
 
-  BuildBreedCrumb() {
+  BuildBreedCrumb() {    
     this.activatedRoute.url.subscribe((urls) => {
       this.BreedCrumbs = new Array();
+      console.log(urls);
+      
       this.activatedRoute.queryParams.subscribe((Param) => {
         let path = '';
         for (let index = 0; index < urls.length; index++) {

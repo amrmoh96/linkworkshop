@@ -1,0 +1,54 @@
+.news__form {
+  .calender__group {
+    flex: 1;
+    margin-right: 20px;
+    label {
+      color: #000;
+      margin: 0;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    input {
+      height: 55px;
+      outline: none;
+      box-shadow: none;
+    }
+    .calender__group__icon {
+      color: #8dc044;
+      font-size: 33px;
+      top: 35%;
+      right: 5px;
+      cursor: pointer;
+    }
+  }
+  .search__service__group {
+    flex: 2;
+    input {
+      height: 55px;
+      outline: none;
+      box-shadow: none;
+      border-radius: 0;
+    }
+    button {
+      border-radius: 0;
+    }
+  }
+  .sort__by__group {
+    height: 45px;
+    margin-left: 15px;
+    .btn-outline-primary:not(:disabled):not(.disabled):active,
+    .btn-outline-primary:not(:disabled):not(.disabled).active,
+    .show > .btn-outline-primary.dropdown-toggle {
+      background-color: #ffffff;
+    }
+    button.btn-outline-primary {
+      border: none;
+      color: #8dc044;
+      box-shadow: none;
+      outline: none;
+      &:hover {
+        background-color: #ffffff;
+      }
+    }
+  }
+}

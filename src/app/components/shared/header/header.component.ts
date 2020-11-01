@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   public showSideMenu:boolean = false;
+  public searchOpened:boolean = false;
   constructor() { }
 
   ngOnInit() {
@@ -15,5 +16,7 @@ export class HeaderComponent implements OnInit {
   public toggleSideMenu(){
     this.showSideMenu = !this.showSideMenu
   }
-
+  openSearch(){
+    this.searchOpened = !this.searchOpened
+  }
 }

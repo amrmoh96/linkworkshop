@@ -1,0 +1,38 @@
+<form class="news__form d-flex align-items-end justify-content-between">
+    <div class="calender__group position-relative">
+        <label for="from">From</label>
+        <input class="form-control" placeholder="Select" name="from" [(ngModel)]="model" ngbDatepicker
+            #fromdate="ngbDatepicker">
+        <div class="calender__group__icon position-absolute" (click)="fromdate.toggle()">
+            <i class="las la-calendar"></i>
+        </div>
+    </div>
+    <div class="calender__group position-relative">
+        <label for="to">To</label>
+        <input class="form-control" placeholder="Select" name="to" [(ngModel)]="model" ngbDatepicker
+            #todate="ngbDatepicker">
+        <div class="calender__group__icon position-absolute" (click)="todate.toggle()">
+            <i class="las la-calendar"></i>
+        </div>
+    </div>
+    <div class="calender__group position-relative">
+        <label for="to">Category</label>
+        <ng-select placeholder="Select" [items]="Categories" bindLabel="name"
+        bindValue="id">
+        </ng-select>
+    </div>
+    <div class="search__service__group d-flex">
+        <input type="text" class="rounded-left form-control" [(ngModel)]="model" name="searchservice"
+            placeholder="Search Service" (keydown.enter)="Search($event)">
+        <button class="rounded-right btn btn-primary" (click)="Search($event)"><i class="las la-search la-2x"></i></button>
+    </div>
+    <div class="sort__by__group">
+        <div ngbDropdown class="d-inline-block">
+            <button class="btn btn-outline-primary" id="sortbutton" ngbDropdownToggle>Sort by</button>
+            <div ngbDropdownMenu aria-labelledby="sortbutton">
+                <button ngbDropdownItem (click)="sort('desc')">A to Z</button>
+                <button ngbDropdownItem (click)="sort('asc')">Z to A</button>
+            </div>
+        </div>
+    </div>
+</form>

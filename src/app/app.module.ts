@@ -4,8 +4,10 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 
 
@@ -19,6 +21,7 @@ import { FormateDatePipe } from './pipes/formate-date.pipe';
 import { NewsComponent } from './components/news/news.component';
 import { BreedCrumbComponent } from './components/shared/breed-crumb/breed-crumb.component';
 import { NewsDetailsComponent } from './components/news-details/news-details.component';
+import { NewsSearchformComponent } from './components/shared/news-searchform/news-searchform.component';
 
 
 @NgModule({
@@ -33,13 +36,16 @@ import { NewsDetailsComponent } from './components/news-details/news-details.com
     FormateDatePipe,
     NewsComponent,
     BreedCrumbComponent,
-    NewsDetailsComponent
+    NewsDetailsComponent,
+    NewsSearchformComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    NgSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

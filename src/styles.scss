@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/scss/bootstrap";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap");
+@import "~@ng-select/ng-select/themes/default.theme.css";
 
 $mainColor: #8dc043;
 html,
@@ -66,15 +67,15 @@ body {
 
 .how__we__helped {
   background: url("./assets/images/bg.jpg");
-  background-size: 120%;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   .section__overlay {
     background: rgb(0, 0, 0);
     background: radial-gradient(
       circle,
-      rgba(0, 0, 0, 0.30575980392156865) 0%,
-      rgba(0, 0, 0, 0.7287289915966386) 100%
+      rgb(0 0 0 / 18%) 0%,
+      rgb(0 0 0 / 0.4) 100%
     );
     .section__title {
       h1 {
@@ -111,6 +112,36 @@ body {
       .botton__row {
         width: 83%;
         margin: auto;
+      }
+    }
+  }
+}
+
+.news__form {
+  .ng-select.ng-select-single .ng-select-container {
+    height: 55px;
+  }
+  .ng-select .ng-select-container .ng-value-container .ng-input > input {
+    height: 40px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .rect__containers {
+    .rect__row {
+      flex-direction: column;
+      .rect {
+        margin: 35px auto;
+        width: 120px !important;
+        height: 120px !important;
+        .rect__content {
+          img {
+            width: 25px;
+          }
+          p {
+            font-size: 16px !important;
+          }
+        }
       }
     }
   }

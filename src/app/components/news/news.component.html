@@ -3,24 +3,33 @@
         <div class="row">
             <div class="col-12">
                 <breed-crumb></breed-crumb>
-                <h1 class="mb-3 news__page__title">News</h1>
+                <h1 class="mb-4 news__page__title">News</h1>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4 mb-4" *ngFor="let article of Articles | slice :PageinatorStart:PageinatorEnd" routerLink="/news/newsdetails/{{article?.id}}">
+            <div class="col-12 mb-4">
+                <news-searchform (onSort)="sort($event)" [Categories]="Categories"></news-searchform>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-4" *ngFor="let article of Articles | slice :PageinatorStart:PageinatorEnd"
+                routerLink="/news/newsdetails/{{article?.id}}">
                 <news-card [article]="article"></news-card>
             </div>
         </div>
         <div class="row">
             <div class="col-12 text-center">
                 <div class="paginator">
-                    <button class="m-1 btn btn-light btn-sm" [disabled]="SelectedPage == 1" (click)="changePage(SelectedPage-1)">
+                    <button class="m-1 btn btn-light btn-sm" [disabled]="SelectedPage == 1"
+                        (click)="changePage(SelectedPage-1)">
                         <i class="las la-angle-left"></i>
                     </button>
                     <button *ngFor="let page of pagesNumbers" (click)="changePage(page)"
                         [class.btn-primary]="page == SelectedPage" [class.text-white]="page == SelectedPage"
                         class="m-1 btn btn-light btn-sm">{{page}}</button>
-                    <button class="m-1 btn btn-light btn-sm" [disabled]="SelectedPage == pagesNumbers[pagesNumbers?.length - 1]" (click)="changePage(SelectedPage+1)">
+                    <button class="m-1 btn btn-light btn-sm"
+                        [disabled]="SelectedPage == pagesNumbers[pagesNumbers?.length - 1]"
+                        (click)="changePage(SelectedPage+1)">
                         <i class="las la-angle-right"></i>
                     </button>
                 </div>
