@@ -52,3 +52,26 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .news__form {
+    flex-direction: column;
+    align-items: unset !important;
+    flex-wrap: wrap;
+    .calender__group {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+    .search__service__group {
+      margin-top: 10px;
+    }
+    .sort__by__group {
+      margin-top: 10px;
+      text-align: right;
+      .dropdown-menu {
+        left: auto !important;
+        right: 0;
+      }
+    }
+  }
+}
