@@ -6,11 +6,10 @@ import { NewsComponent } from "./components/news/news.component";
 
 const routes: Routes = [
   { path: "", component: HomepageComponent },
-  { path: "news", component: NewsComponent, data: { name: "News" } },
+  { path: "news", component: NewsComponent},
   {
     path: "news/newsdetails/:id",
-    component: NewsDetailsComponent,
-    data: { name: "News Details" },
+    component: NewsDetailsComponent
   },
 ];
 

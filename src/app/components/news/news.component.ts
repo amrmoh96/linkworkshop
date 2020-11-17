@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Article } from "src/app/models/articles";
 import { ReadjsonService } from "src/app/service/readjson.service";
-import { isAfter } from "date-fns";
 import { Category } from "src/app/models/category";
 
 @Component({
@@ -21,7 +20,6 @@ export class NewsComponent implements OnInit {
   ngOnInit() {
     this.JsonService.getData().subscribe((res) => {
       this.Categories = res.sourceCategory;
-      console.log(this.Categories);
       this.Articles = res.articles;
       this.Articles = this.sort({ type: "desc" });
     });
